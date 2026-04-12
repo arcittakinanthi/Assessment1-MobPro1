@@ -76,7 +76,7 @@ fun HomeScreen(
         ) {
             item {
                 Image(
-                    painter = painterResource(id = R.drawable.apkKu),
+                    painter = painterResource(id = R.drawable.apk_ku),
                     contentDescription = "Logo",
                     modifier = Modifier
                         .size(150.dp)
