@@ -1,6 +1,7 @@
-package com.arcittakinanthi.mobpro1.ui.theme
+package com.arcittakinanthi.mobpro1.screen
 
 import android.content.Intent
+import android.net.Uri
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -30,8 +31,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import androidx.core.net.toUri
 import com.arcittakinanthi.mobpro1.R
 import com.arcittakinanthi.mobpro1.model.Transaksi
 
@@ -46,15 +47,18 @@ fun HomeScreen(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Manajer Uangku") },
+                title = { Text(stringResource(R.string.app_name)) },
                 actions = {
                     IconButton(onClick = {
-                        val intent = Intent(Intent.ACTION_VIEW, "https://google.com".toUri())
+                        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://google.com"))
                         context.startActivity(intent)
                     }) {
-                        Icon(imageVector = Icons.Default.Share, contentDescription = "Buka Browser")
+                        Icon(imageVector = Icons.Default.Share, contentDescription = "Share")
                     }
-                    IconButton(onClick = { }) {
+                    IconButton(onClick = {
+                        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/arcittakinanthi"))
+                        context.startActivity(intent)
+                    }) {
                         Icon(imageVector = Icons.Default.Info, contentDescription = "Info")
                     }
                 }

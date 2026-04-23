@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Manajer Uangku</string>
+    <string name="input_data">Input Data</string>
+    <string name="label_nama">Nama Pengeluaran</string>
+    <string name="label_nominal">Nominal (Rp)</string>
+    <string name="btn_simpan">Simpan</string>
+    <string name="info_desc">Tentang Aplikasi</string>
+    <string name="label_kategori">Kategori:</string>
+    <string name="kat_makanan">Makanan</string>
+    <string name="kat_transport">Transport</string>
+    <string name="kat_lainnya">Lainnya</string>
 </resources>

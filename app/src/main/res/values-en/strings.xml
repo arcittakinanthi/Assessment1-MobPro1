@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">My Money Manager</string>
+    <string name="input_data">Add Transaction</string>
+    <string name="label_nama">Expense Name</string>
+    <string name="label_nominal">Amount (Rp)</string>
+    <string name="btn_simpan">Save Data</string>
+    <string name="info_desc">About App</string>
+    <string name="label_kategori">Category:</string>
+    <string name="kat_makanan">Food</string>
+    <string name="kat_transport">Transport</string>
+    <string name="kat_lainnya">Others</string>
 </resources>
