@@ -4,12 +4,10 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.runtime.mutableStateListOf
-import androidx.compose.runtime.remember
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.rememberNavController
-import com.arcittakinanthi.mobpro1.model.Transaksi
+import com.arcittakinanthi.mobpro1.database.TransaksiViewModel
 import com.arcittakinanthi.mobpro1.navigation.NavGraph
-import com.arcittakinanthi.mobpro1.screen.TransaksiData
 import com.arcittakinanthi.mobpro1.ui.theme.ManajerUangkuTheme
 
 class MainActivity : ComponentActivity() {
@@ -19,14 +17,12 @@ class MainActivity : ComponentActivity() {
         setContent {
             ManajerUangkuTheme {
                 val navController = rememberNavController()
-                val listTransaksi = remember {
-                    mutableStateListOf<Transaksi>().apply {
-                        addAll(TransaksiData.listDummy)
-                    }
-                }
+
+                val viewModel: TransaksiViewModel = viewModel()
+
                 NavGraph(
                     navController = navController,
-                    listTransaksi = listTransaksi
+                    viewModel = viewModel
                 )
             }
         }

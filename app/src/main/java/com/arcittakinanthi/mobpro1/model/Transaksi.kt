@@ -3,7 +3,7 @@ package com.arcittakinanthi.mobpro1.model
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "transaksi_table")
+@Entity(tableName = "transaksi")
 data class Transaksi(
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,

@@ -9,4 +9,17 @@
     <string name="kat_makanan">Makanan</string>
     <string name="kat_transport">Transport</string>
     <string name="kat_lainnya">Lainnya</string>
+
+    <string name="edit_data">Ubah Transaksi</string>
+    <string name="btn_update">Perbarui</string>
+
+    <string name="konfirmasi">Konfirmasi Hapus</string>
+    <string name="pesan_hapus">Apakah kamu yakin ingin menghapus catatan ini?</string>
+    <string name="ya">Ya</string>
+    <string name="batal">Batal</string>
+
+    <string name="msg_success">Data berhasil disimpan!</string>
+    <string name="msg_updated">Data berhasil diperbarui!</string>
+    <string name="msg_deleted">Data berhasil dihapus!</string>
+    <string name="msg_empty">Isi dulu semua bos!</string>
 </resources>
