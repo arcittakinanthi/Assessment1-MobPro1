@@ -7,13 +7,11 @@ import androidx.room.Query
 import com.arcittakinanthi.mobpro1.model.Transaksi
 import kotlinx.coroutines.flow.Flow
 
-class TransaksiDao {
-    @Dao
-    interface TransaksiDao {
-        @Query("SELECT * FROM transaksi_table ORDER BY id DESC")
-        fun getAllTransaksi(): Flow<List<Transaksi>>
+@Dao
+interface TransaksiDao {
+    @Query("SELECT * FROM transaksi_table ORDER BY id DESC")
+    fun getAllTransaksi(): Flow<List<Transaksi>>
 
-        @Insert(onConflict = OnConflictStrategy.REPLACE)
-        suspend fun insert(transaksi: Transaksi)
-    }
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insert(transaksi: Transaksi)
 }
