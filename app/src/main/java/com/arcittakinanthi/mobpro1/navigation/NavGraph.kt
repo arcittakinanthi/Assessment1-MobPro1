@@ -1,18 +1,19 @@
 package com.arcittakinanthi.mobpro1.navigation
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.arcittakinanthi.mobpro1.model.Transaksi
+import com.arcittakinanthi.mobpro1.database.TransaksiViewModel
 import com.arcittakinanthi.mobpro1.screen.AddScreen
 import com.arcittakinanthi.mobpro1.screen.HomeScreen
 
 @Composable
-fun NavGraph(
-    navController: NavHostController,
-    listTransaksi: MutableList<Transaksi>
-) {
+fun NavGraph(navController: NavHostController, viewModel: TransaksiViewModel) {
+    val listTransaksi by viewModel.allTransaksi.collectAsState(initial = emptyList())
+
     NavHost(
         navController = navController,
         startDestination = Screen.Home.route
@@ -26,8 +27,8 @@ fun NavGraph(
         composable(Screen.Tambah.route) {
             AddScreen(
                 onBackClick = { navController.popBackStack() },
-                onSaveClick = { nama, nominal, kategori ->
-                    listTransaksi.add(Transaksi(nama, nominal, kategori))
+                onSaveClick = { nama, nom, kat ->
+                    viewModel.insert(nama, nom, kat)
                 }
             )
         }
