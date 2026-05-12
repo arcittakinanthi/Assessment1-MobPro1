@@ -18,8 +18,8 @@ interface TransaksiDao {
     suspend fun insert(transaksi: Transaksi): Long
 
     @Update
-    suspend fun update(transaksi: Transaksi)
+    suspend fun update(transaksi: Transaksi): Int
 
     @Delete
-    suspend fun delete(transaksi: Transaksi)
+    suspend fun delete(transaksi: Transaksi): Int 
 }
